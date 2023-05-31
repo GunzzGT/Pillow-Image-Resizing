@@ -1,5 +1,6 @@
-#from PIL import Image
 import os
+
+from PIL import Image
 
 # r"C:\Users\gunaw\Pictures"
 
@@ -12,9 +13,29 @@ for (root, dirs, files) in os.walk(directory_name):
 for f in file_list:
     print(f)
 
+im = Image.open(R"C:\Users\gunaw\Pictures\ARMSTROOOOOOOOOOOOONG.jpg")
+width, height = im.size
+ratio = im.size
+print(ratio)
+im1 = im.resize((256, 256))
+# im1.save("test.png", format='PNG', dpi=(300, 300))
+im1.show()
 
+#left = 0
+#top = 0
+#right = width
+#bottom = height
 
-#in conclusion r"{}".format(input) would be the safest option here
+left = 1/4 * width
+right = 3/4 *width
+top = 1/4 * height
+bottom = 3/4 * height
+# centered crop = add left and top, minus rignt and bottom
+# for the rest you get the gist of it
+im2 = im.crop((left, top, right, bottom))
+im2.show()
+
+# in conclusion r"{}".format(input) would be the safest option here
 
 """
 # NOTES
@@ -67,14 +88,3 @@ print(test)
 print(repr(test))
 # this is ok number 5 \u is reserved for unicode, otherwise this can work too, read https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html for more
 print(arr)
-
-"""
-for x in imglist:
-    im = Image.open(x)
-    width, height = im.size
-    ratio = im.size
-    print(ratio)
-    im1 = im.resize((256, 256))
-    im1.save("test.png", format='PNG', dpi=(300, 300))
-    im1.show()
-"""
