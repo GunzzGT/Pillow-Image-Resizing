@@ -1,17 +1,17 @@
 from pymongo import MongoClient
 # python -m pip install "pymongo[srv]"
 # python -m pip install python-dateutil
+CONNECTION_STRING = "mongodb://localhost:27017/"
+
 
 def get_database():
-    # Provide the mongodb atlas url to connect python to mongodb using pymongo
-    CONNECTION_STRING = "mongodb://localhost:27017/"
-
-    # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
     client = MongoClient(CONNECTION_STRING)
-
-    # Create the database for our example (we will use the same database throughout the tutorial
     return client['user_shopping_list']
 
+def close_database():
+    client = MongoClient(CONNECTION_STRING)
+    print('connection_closed')
+    client.close()
 
 # This is added so that many files can reuse the function get_database()
 if __name__ == "__main__":
