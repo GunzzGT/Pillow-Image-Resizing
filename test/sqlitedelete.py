@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('test.db')
+conn = sqlite3.connect('../test.db')
 print("Opened database successfully")
 
 conn.execute("DELETE FROM table WHERE search_condition ORDER BY criteria LIMIT row_count OFFSET offset;")
