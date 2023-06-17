@@ -1,7 +1,6 @@
 import os
 
 from PIL import Image
-
 # r"C:\Users\gunaw\Pictures"
 
 directory_name = "C:\\Users\\gunaw\\Pictures"
@@ -21,15 +20,15 @@ im1 = im.resize((256, 256))
 # im1.save("test.png", format='PNG', dpi=(300, 300))
 im1.show()
 
-#left = 0
-#top = 0
-#right = width
-#bottom = height
+# left = 0
+# top = 0
+# right = width
+# bottom = height
 
-left = 1/4 * width
-right = 3/4 *width
-top = 1/4 * height
-bottom = 3/4 * height
+left = 1 / 4 * width
+right = 3 / 4 * width
+top = 1 / 4 * height
+bottom = 3 / 4 * height
 # centered crop = add left and top, minus rignt and bottom
 # for the rest you get the gist of it
 im2 = im.crop((left, top, right, bottom))

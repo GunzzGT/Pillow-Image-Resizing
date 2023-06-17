@@ -1,5 +1,6 @@
 from PIL import Image
 
+
 def resize(img, rat, res, fmt):
     old_im = Image.open(img)
     old_ratio = old_im.size

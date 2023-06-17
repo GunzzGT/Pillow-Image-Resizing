@@ -1,19 +1,16 @@
 from mongodbcreate import get_database
-import json
 
 dbname = get_database()
 collection_name = dbname["user_1_items"]
-#table name
+# table name
 
 cursor = collection_name.find()
 for doc in cursor:
     print(doc)
 
-
 from mongodbcreate import close_database
 
-
-test = collection_name.find({},{'_id':0, 'item_name':1})
+test = collection_name.find({}, {'_id': 0, 'item_name': 1})
 
 for doc in test:
     print(doc)
@@ -25,6 +22,6 @@ myquery = {'item_name': 'Bread'}
 mydoc = collection_name.find(myquery)
 
 for y in mydoc:
-  print(y)
+    print(y)
 
 close_database()
