@@ -21,6 +21,7 @@ item_2 = {
     "price": 36,
     "item_description": "brown country eggs"
 }
+
 collection_name.insert_many([item_1, item_2])
 
 from dateutil import parser
@@ -34,3 +35,14 @@ item_3 = {
     "expiry_date": expiry
 }
 collection_name.insert_one(item_3)
+
+item_4 = {
+    "id": "U1ITtest1",
+    "item_name": "Blender",
+    "max_discount": "10%",
+    "batch_number": "RR450020FRG",
+    "price": 340,
+    "category": "kitchen appliance",
+    "bebas": "bebas"
+}
+collection_name.insert_one(item_4)
